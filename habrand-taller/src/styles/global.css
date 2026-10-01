@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+@theme {
+    --font-script: 'Style Script' , cursive;
+    --font-poppins: 'Poppins', cursive;
+}
