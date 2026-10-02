@@ -85,6 +85,7 @@
   }
 
   const numeroWhatsApp = import.meta.env.PUBLIC_NUMERO_WP;
+  const urlSheets = import.meta.env.PUBLIC_SHEETS_URL;
   const btnWpFlotante = document.getElementById('btn-wp-flotante');
 
   if (btnWpFlotante instanceof HTMLAnchorElement) {
@@ -143,6 +144,14 @@
     }
 
     if (formularioValido) {
+      fetch(urlSheets, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ name, email, telefono }),
+      }).catch(() => {});
+
       const alerta = document.querySelector('#alerta-exito');
       alerta?.classList.remove('hidden');
 
