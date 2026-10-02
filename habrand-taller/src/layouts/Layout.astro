@@ -49,6 +49,9 @@ import "../styles/global.css";
 
 	html.fonts-loading .anim-rise,
 	html.fonts-loading .anim-fade { animation-play-state: paused; }
+	html, body {
+	overscroll-behavior-y: none;
+    }
 
 	@keyframes rise {
 		from { opacity: 0; transform: translateY(28px); }
